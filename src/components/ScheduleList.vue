@@ -1,7 +1,8 @@
 <template>
-  <v-card elevation="2">
-    <v-card-title>Schedule Entries</v-card-title>
-    <v-data-table :items="entries" :headers="headers" class="elevation-1">
+  <v-card>
+    <v-card-title>Schedule List</v-card-title>
+
+    <v-data-table :items="entries" :headers="headers">
       <template #item.group="{ item }">
         {{ item.group.name }}
       </template>
@@ -23,10 +24,7 @@
 
 <script setup>
 const props = defineProps({
-  entries: {
-    type: Array,
-    default: () => [],
-  },
+  entries: Array,
 });
 
 const headers = [
